@@ -1,0 +1,23 @@
+{% extends 'budget/base.html' %}
+{% load static %}
+{% block head %}
+{{super}}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {{ message }}
+  <form id='submit-button' action="user_login" method="post">
+  {% csrf_token %}
+    {{ form }}
+    <br><br><br>
+  <input type="submit" class="btn waves-effect tooltipped" data-position="bottom" data-tooltip="This site combines face recognition and liveness detection technology to ensure the photo ID uploaded is the same person looking at the camera (face match)." value="Sign in" name="login"></input>
+  </form>
+  </div>
+
+<script>
+  var elems = document.querySelector('.tooltipped');
+  var instances = M.Tooltip.init(elems);
+
+</script>
+{% endblock %}

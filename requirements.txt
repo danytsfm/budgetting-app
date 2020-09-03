@@ -1,0 +1,6 @@
+Django==3.0.7
+cmake
+dlib
+pillow
+face_recognition
+numpy

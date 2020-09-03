@@ -1,0 +1,28 @@
+{% extends 'budget/base.html'%}
+{% load static%}
+{% block head %}
+{% endblock%}
+
+
+{% block content%}
+
+<div class="container">
+<h2>Archived Projects</h2>
+<hr></hr>
+<div class="row">
+  {% for project in project_list %}
+  <div class="col s12 l4">
+    <div class="card-panel">
+    <h5>{{ project.name }}</h5>
+    <a href="{% url 'detail' project.slug %}" class="btn waves-effect">Detail</a>
+    </div>
+  </div>
+  {% empty %}
+  <div class=" center">
+    <h3 class="grey-text">You don't have any archived projects, yet.</h3>
+  </div>
+  {% endfor %}
+</div>
+</div>
+
+{% endblock %}
